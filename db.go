@@ -222,7 +222,7 @@ func (oc *OracleClient) QueryRowWithDest(dest interface{}, sqlStr string, args .
 }
 
 // 反射结构体查询数据保存到Struct
-func (oc *OracleClient) QueryWithWhereCase(tname string, whereCase WhereCase, dest interface{}) (err error) {
+func (oc *OracleClient) QueryRowWithWhereCase(tname string, whereCase WhereCase, dest interface{}) (err error) {
 	if oc.conf.recoverPanic {
 		defer func() {
 			if panicError := recover(); panicError != nil {
@@ -268,7 +268,7 @@ func (oc *OracleClient) QueryWithWhereCase(tname string, whereCase WhereCase, de
 }
 
 // 反射结构体查询数据保存到Slice
-func (oc *OracleClient) QueryRowsWithWhereCase(tname string, whereCase WhereCase, dest interface{}) (err error) {
+func (oc *OracleClient) QueryWithWhereCase(tname string, whereCase WhereCase, dest interface{}) (err error) {
 	if oc.conf.recoverPanic {
 		defer func() {
 			if panicError := recover(); panicError != nil {
